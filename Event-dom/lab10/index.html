@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="province">Province:</label>
+  <select id="Province" name="Province">
+    <option value="default">เลือกจังหวัด</option>
+    <option value="Bangkok">Bangkok</option>
+    <option value="chiangmai">chiangmai</option>
+  </select>
+
+  <label for="District">District:</label>
+  <select id="District" name="District">
+      <option value="select district">select district</option>`
+  </select>
+  <script> 
+    const dataOfThailand = {
+      Bangkok : ['จตุจักร','คลองสามวา',' จอมทอง','พระโขนง'],
+      chiangmai : ['แม่แจ่ม','แม่แตง ','แม่แตง','สันกำแพง']
+    }  
+    const selectProvince = document.querySelector('#Province')
+    const selectDistrict = document.querySelector('#District')
+    selectProvince.addEventListener('change',(e)=>{
+      // console.log(e.target.value)
+      // 
+      let province = e.target.value
+      let district = dataOfThailand[province]
+      // console.log(district)
+
+      selectDistrict.innerHTML = ""
+      let defaultOption = document.createElement('option')
+      defaultOption.textContent = "select district"
+      selectDistrict.prepend(defaultOption)
+
+      if(province !== "default"){
+        district.forEach(element => {
+          let option = document.createElement('option')
+          option.value = element
+          option.textContent = element
+          selectDistrict.append(option)});
+      }
+
+    })
+  </script>
+</body>
+</html>
+
+
+<!-- โจทย์ คือ ให้ user select province เเล้ว district ขึ้นอําเภอที่อยู่ใน province นั้น -->
+<!-- ให้ default มี เเค่ select -->
+<!-- province กับ district เกี่ยวข้องยังไงกันดี  -->
+<!-- ถ้า user เลือก bangkok ต้องใช้อะไร จัดการ ans change -->
+<!-- ได้อําเภอออกมาเเล้ว เหลือ ให้อําเภอ ไปขึ้นที่ select ของ district -->
+<!-- forEach -->
+<!-- option.value ,option.textContent -->

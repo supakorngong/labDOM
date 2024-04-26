@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+  //     จงสร้าง <ul>
+  // เขียนคำสั่ง prompt เพื่อรับข้อความ
+  // นำข้อความที่ได้มาสร้าง <li> และ เพิ่มเข้าไปใน <ul>
+  // เพิ่มไปเรื่อยๆจนกว่าผู้ใช้จะกด Cancel หรือ พิมพ์ข้อความว่าง
+  // let input = prompt('enter your input')
+  // const body = document.querySelector('body')
+  // const ul = document.createElement('ul')
+  // // ul.innerText = 'eieie'
+  // body.append(ul)
+  // const li = document.createElement('li')
+  // li.innerText = input
+  // ul.append(li)
+  let input = 0;
+  const body = document.querySelector('body')
+  const ul = document.createElement('ul')
+  body.append(ul)
+    for(let i = 0; input!==null; i++){
+      input = prompt('enter your input')
+
+      if(input === "" || input === null) break
+      
+      const li = document.createElement('li')
+      li.innerText = input
+      ul.append(li)
+    }
+      
+   
+  
+  
+
+  </script>
+</body>
+</html>

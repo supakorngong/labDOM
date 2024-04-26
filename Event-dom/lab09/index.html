@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    จงสร้าง Input และ Button ดังรูปเมื่อผู้ใช้กรอกเบอร์โทรและกด Check
+ถ้าผู้ใช้ไม่กรอกให้ขึ้นข้อความ Phone Number is required
+ถ้าผู้ใช้กรอกค่าที่ไม่ใช่ตัวเลขให้ขึ้นข้อความ Phone Number is invalid
+ถ้าผู้ใช้กรอกค่าที่มีความยาวไม่เท่ากับ 10 ให้ขึ้นข้อความ Invalid length
+ถ้ากรอกถูกต้องให้ Alert “Your number is valid”
+   -->
+   <input type="text" name="" id="">
+   <button>check</button>
+   <script>
+    // ถ้าผู้ใช้ไม่กรอกให้ขึ้นข้อความ Phone Number is required
+    const input = document.querySelector('input')
+    const button = document.querySelector('button')
+    button.addEventListener('click',()=>{
+      if(!input.value.trim()){
+        alert('phone number is required')
+      }else if(isNaN(input.value)){  // ถ้าผู้ใช้กรอกค่าที่ไม่ใช่ตัวเลขให้ขึ้นข้อความ Phone Number is invalid
+        alert('phone number is required')
+      }else if(input.value.length !== 10){ //ถ้าผู้ใช้กรอกค่าที่มีความยาวไม่เท่ากับ 10 ให้ขึ้นข้อความ Invalid length
+        alert('invalid length')
+      }else if(input.value.trim() && !isNaN(input.value) && input.value.length === 10 ){
+        alert('your number is valid')
+      }
+    })
+   
+   </script>
+  
+</body>
+</html>

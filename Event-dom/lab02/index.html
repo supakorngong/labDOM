@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <button>submit</button>
+  </form>
+
+  <script>
+    const form = document.querySelector('form')
+
+    function showMessage(){
+      alert('form is submitted')
+      form.removeEventListener('submit',showMessage)
+    }
+
+    form.addEventListener('submit',showMessage)
+    form.addEventListener('submit',(e)=>{
+       e.preventDefault()
+    })
+
+    // setTimeout(()=>{
+    //   form.removeEventListener('submit',showMessage)
+    //   form.addEventListener('submit',(e)=>{
+    //     e.preventDefault()
+    //   })
+    // },5000)
+    
+    
+
+  </script>
+  <!-- HTML-attribute
+ DOM property
+ Event listener
+ จงเขียนคำสั่งยกเลิก Event Handler
+ -->
+  
+</body>
+</html>

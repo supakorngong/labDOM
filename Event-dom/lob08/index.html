@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hide{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- จงสร้าง Button มีข้อความว่า “Hide”
+  เมื่อผู้ใช้ click button ให้ซ่อนข้อความและเปลี่ยนข้อความบน Button เป็น “Show” 
+  เมื่อ click button อีกครั้งให้แสดงข้อความและเปลี่ยนข้อความบน Button เป็น Hide -->
+  <button class="eiei">Hide</button>
+  <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam delectus inventore, laboriosam laborum recusandae perferendis animi distinctio adipisci expedita voluptas, ipsa eius minima omnis nemo porro ex incidunt beatae? Esse.</p>
+    <script>
+      const button = document.querySelector('button')
+      const p = document.querySelector('p')
+      
+      button.addEventListener('click',()=>{
+        if(button.innerHTML === "Hide"){
+          button.innerHTML = 'Show'
+        }else{
+          button.innerHTML = 'Hide'
+        }
+        p.classList.toggle('hide')
+      })
+      
+    </script>
+    
+</body>
+</html>

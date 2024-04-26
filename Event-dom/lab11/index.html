@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="decre">-</button>
+  <span>1</span>
+  <button id="incre">+</button>
+  <button id="reset">reset</button>
+  <script>
+    const decrement = document.getElementById('decre')
+    const increment = document.querySelectorAll('button')[1]
+    const score = document.querySelector('span')
+    const reset = document.querySelector('#reset')
+
+    decrement.addEventListener('click',(e)=>{
+      const currentScore = +score.textContent;
+      if(currentScore > 0){
+        let newCount = currentScore - 1
+        score.textContent = newCount
+      }
+    })
+    increment.addEventListener('click',(e)=>{
+      const currentScore = +score.textContent;
+      let newCount = currentScore + 1
+      score.textContent = newCount
+    })
+    reset.addEventListener('click',()=>{
+      score.innerHTML = 0
+    })
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ol id="elem">
+    <li>Hello</li>
+    <li>World</li>
+    <li>World</li>
+  </ol>
+<script>
+  // first
+    function clear(elem) { 
+      // let li1 = document.querySelectorAll('li')[0]
+      // let li2 = document.querySelectorAll('li')[1]
+      // li1.remove()
+      // li2.remove()
+      let ol = document.getElementById(elem)
+      ol.innerHTML = ""
+    }
+    clear('elem'); // clears the list
+
+    //second approach
+    // function clear(elem) { 
+    //   const ol = document.getElementById(elem)
+    //   console.log(ol)
+    //   const olChild = ol.children
+    //   const olLength = olChild.length
+    //   for(let i = 0;i < olLength;i++){
+    //     olChild[0].remove()
+    //   }
+    // }
+    // clear('elem'); // clears the list
+</script>
+     
+  
+</body>
+</html>

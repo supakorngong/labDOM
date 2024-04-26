@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn">Submit</button>
+<script>
+  // ปลี่ยนสีพื้นหลังของ button ให้เป็นสีแดงเมื่อเวลาผ่านไป 3 
+  // กนั้นอีก 3 วินาทีให้เปลี่ยนสีพื้นหลังกลับมาเหมือนเดิม
+ /*เปลี่ยน property style ของ element object
+  ใช้วิธีเพิ่มลด class*/
+  const button = document.querySelector('.btn')
+  button.style.backgroundColor = ""
+  // setTimeout(()=>{
+  //   button.style.backgroundColor = "red"
+  //   setTimeout(()=>{
+  //   button.style.backgroundColor = ""
+  // },3000)
+  // },3000)
+  
+  setTimeout(()=>{
+    button.classList.add('active')
+    setTimeout(()=>{
+      button.classList.remove('active')
+    },3000)
+  },3000)
+
+</script>
+</body>
+</html>

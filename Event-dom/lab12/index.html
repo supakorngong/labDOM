@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- จงสร้าง Todo List ดังรูป
+เมื่อผู้ใช้ click Add ให้เพิ่มรายการ
+เมื่อผู้ใช้ click Edit ให้แก้ไขข้อความ
+เมื่อผู้ใช้ click Del ให้ลบรายการ
+เมื่อผู้ใช้ click ที่รายการใน List ให้
+Toggle เส้นที่ขีดค่าข้อความ
+ -->
+ <button id="add" type="button">add</button>
+ <ul>
+
+ </ul>
+ <script>
+  const addButton = document.querySelector('#add')
+  const ul = document.querySelector('ul')
+  
+  addButton.addEventListener('click',()=>{
+    let toDo = prompt('enter your to do list')
+
+    while(!toDo.trim()){ toDo = prompt('enter your to do list')}
+
+    let list = document.createElement('li')
+    list.style.listStyleType = 'none'
+    let span = document.createElement('span')
+    let edit = document.createElement('button')
+
+    span.textContent = toDo
+    edit.textContent = 'edit'
+    // edit.setAttribute('id',toDo)
+    edit.style.marginLeft = '20px'
+    edit.style.marginRight = '5px'
+
+    edit.addEventListener('click',(e)=>{
+      let editTodo = prompt('edit your todo list')
+      while(!editTodo.trim()){ editTodo = prompt('enter your to do list')}
+      span.textContent = editTodo
+      span.style.textDecoration = 'none'
+      span.style.color = 'black'
+    })
+
+    let deletee = document.createElement('button')
+    deletee.textContent = 'delete'
+    deletee.addEventListener('click',()=>{
+      span.style.color =  'green'
+      span.style.textDecoration =  'line-through'
+    })
+    // deletee.setAttribute('id',toDo+'delete')
+    list.appendChild(span)
+    list.appendChild(edit)
+    list.appendChild(deletee)
+    ul.append(list)
+  }) 
+ 
+ </script>
+  
+</body>
+</html>
